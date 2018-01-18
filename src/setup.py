@@ -12,15 +12,15 @@ from src.fitness import calculateFitness
 from src.chromosome import Chromosome
 
 
-def main():
-    t = Chromosome(0, 20)
+def main(size, gen, crossover):
+    t = Chromosome(0, size)
     # low coupling, high cohesion
     creator.create('FitnessMinMax', base.Fitness, weights=(1.0, -1.0))
     creator.create('Individual', list, fitness=creator.FitnessMinMax)
 
-    MU = 20
-    NGEN = 100
-    CXPB = 0.95
+    MU = size
+    NGEN = gen
+    CXPB = crossover
 
     toolbox = base.Toolbox()
     toolbox.register("individual", initialisation, creator.Individual)
@@ -82,5 +82,8 @@ def main():
     return pop
 
 
-for i in main():
+size = 20
+gen = 100
+crossover = 0.95
+for i in main(size, gen, crossover):
     print(i)

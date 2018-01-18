@@ -1,0 +1,6 @@
+
+*.pyc
+*.svg
+*.xml
+.idea/ImplementCBD.iml
+*.py___jb_tmp___
