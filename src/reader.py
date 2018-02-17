@@ -1,5 +1,5 @@
 def readData(test, size):
-    fileID = '../data/data' + str(test) + f'{size:04d}' + '.txt'
+    fileID = 'data/data' + str(test) + f'{size:04d}' + '.txt'
     file = open(fileID, 'r')
     size = int(file.readline().strip())
     mat = []
